@@ -50,22 +50,22 @@ export const LoginForm = () => {
 
     startTransition(() => {
       login(values, callbackUrl)
-        // .then((data) => {
-        //   if (data?.error) {
-        //     form.reset();
-        //     setError(data.error);
-        //   }
+        .then((data) => {
+          if (data?.error) {
+            form.reset();
+            setError(data.error);
+          }
 
-        //   if (data?.success) {
-        //     form.reset();
-        //     setSuccess(data.success);
-        //   }
+          // if (data?.success) {
+          //   form.reset();
+          //   setSuccess(data.success);
+          // }
 
-        //   if (data?.twoFactor) {
-        //     setShowTwoFactor(true);
-        //   }
-        // })
-        // .catch(() => setError("Something went wrong"));
+          // if (data?.twoFactor) {
+          //   setShowTwoFactor(true);
+          // }
+        })
+        .catch(() => setError("Something went wrong"));
     });
   };
 
