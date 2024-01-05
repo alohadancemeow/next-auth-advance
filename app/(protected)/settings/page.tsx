@@ -1,11 +1,18 @@
-import React from 'react'
+import { signOut } from "@/auth";
 
-type Props = {}
+type Props = {};
 
 const Setting = (props: Props) => {
   return (
-    <div>Setting</div>
-  )
-}
+    <form
+      action={async () => {
+        "use server";
+        await signOut();
+      }}
+    >
+      <button>Sign out</button>
+    </form>
+  );
+};
 
-export default Setting
+export default Setting;
